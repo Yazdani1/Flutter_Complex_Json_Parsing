@@ -5,36 +5,15 @@ import 'Data.dart';
 
 class Home extends StatefulWidget {
 
+  List listOf;
 
-
-
+  Home(this.listOf);
 
   @override
   _HomeState createState() => new _HomeState();
 }
 
 class _HomeState extends State<Home>  {
-
-  @override
-  void initState() {
-    setState(() {
-      List mdata;
-      Future<List>getComplex() async{
-      String api="https://jsonplaceholder.typicode.com/users";
-
-      var data=await http.get(api);
-      var jsonData=json.decode(data.body);
-      mdata=jsonData;
-
-      print(mdata);
-
-      return jsonData;
-
-}
-
-    });
-    super.initState();
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -56,6 +35,22 @@ class _HomeState extends State<Home>  {
         ],
       ),
 
+      body: ListView.builder(
+    itemCount: widget.listOf.length,
+        itemBuilder: (BuildContext c,int index){
+          return Card(
+            elevation: 10.0,
+            margin: EdgeInsets.all(8.0),
+            child: new Column(
+              children: <Widget>[
+
+                new Text(widget.listOf[index]["email"])
+
+              ],
+            ),
+          );
+        }
+    )
     );
   }
 }
