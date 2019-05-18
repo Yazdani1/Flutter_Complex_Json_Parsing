@@ -41,11 +41,16 @@ void main() async{
                 new SizedBox(width: 5.0,),
                 new Expanded(
                   flex: 3,
-                  child: new Text(m[index]["title"],
-                  maxLines: 2,
-                  style: TextStyle(
-                    fontSize: 22.0
-                  ),
+                  child: InkWell(
+                    child: new Text(m[index]["title"],
+                    maxLines: 2,
+                    style: TextStyle(
+                      fontSize: 22.0
+                    ),
+                    ),
+                    onTap: (){
+                      print("Data is ${m[index]["userId"]}");
+                    },
                   ),
                 ),
                 
