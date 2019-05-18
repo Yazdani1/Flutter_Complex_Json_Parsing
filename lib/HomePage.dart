@@ -41,12 +41,34 @@ class _HomeState extends State<Home>  {
           return Card(
             elevation: 10.0,
             margin: EdgeInsets.all(8.0),
-            child: new Column(
-              children: <Widget>[
+            child: Container(
+              padding: EdgeInsets.all(10.0),
+              child: new Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: <Widget>[
 
-                new Text(widget.listOf[index]["email"])
 
-              ],
+                  new Text(widget.listOf[index]["name"]),
+                  new SizedBox(height: 8.0,),
+                  new Text(widget.listOf[index]["username"]),
+                  new SizedBox(height: 8.0,),
+                  new Text(widget.listOf[index]["email"]),
+                  new SizedBox(height: 8.0,),
+                  new Text(widget.listOf[index]["address"]["zipcode"]),
+                  new SizedBox(height: 8.0,),
+                  new Text(widget.listOf[index]["address"]["city"]),
+                  new SizedBox(height: 8.0,),
+                  new Text(widget.listOf[index]["address"]["suite"]),
+                  new SizedBox(height: 8.0,),
+                  new Text(widget.listOf[index]["address"]["street"]),
+                  new SizedBox(height: 8.0,),
+                  new Text(widget.listOf[index]["address"]["geo"]["lat"]),
+                  new SizedBox(height: 8.0,),
+                  new Text(widget.listOf[index]["address"]["geo"]["lng"]),
+                  new SizedBox(height: 8.0,),
+
+                ],
+              ),
             ),
           );
         }
