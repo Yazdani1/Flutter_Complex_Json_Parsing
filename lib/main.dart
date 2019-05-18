@@ -27,8 +27,34 @@ void main() async{
         title: new Text("Compelx Json"),
         backgroundColor: Colors.orange,
       ),
+    body: new Container(
+      //child: new Text(data[0]["address"]["geo"]["lat"]),
 
-
+      child: new ListView.builder(
+          itemCount: data.length,
+        itemBuilder: (BuildContext c,int index){
+            return Card(
+              elevation: 10.0,
+              margin: EdgeInsets.all(7.0),
+              child: new Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: <Widget>[
+                  
+                  Padding(
+                    padding: const EdgeInsets.all(15.0),
+                    child: new Text("City Name: ${data[index]["address"]["city"]}"),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(15.0),
+                    child: new Text("Email: ${data[index]["email"]}"),
+                  )
+                  
+                ],
+              ),
+            );
+        }
+      )
+    )
 
 //    body: new ListView.builder(
 //        itemCount: m.length,
