@@ -39,15 +39,43 @@ void main() async{
               child: new Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
-                  
+
                   Padding(
-                    padding: const EdgeInsets.all(15.0),
+                    padding: const EdgeInsets.all(6.0),
+                    child: new Text("Name: ${data[index]["name"]}"),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(6.0),
+                    child: new Text("Username: ${data[index]["username"]}"),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(6.0),
                     child: new Text("City Name: ${data[index]["address"]["city"]}"),
                   ),
                   Padding(
-                    padding: const EdgeInsets.all(15.0),
+                    padding: const EdgeInsets.all(6.0),
                     child: new Text("Email: ${data[index]["email"]}"),
-                  )
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(6.0),
+                    child: new Text("Lat: ${data[index]["address"]["geo"]["lat"]}"),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(6.0),
+                    child: new Text("street: ${data[index]["address"]["street"]}"),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(6.0),
+                    child: new Text("suite: ${data[index]["address"]["suite"]}"),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(6.0),
+                    child: new Text("zipcode: ${data[index]["address"]["zipcode"]}"),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(6.0),
+                    child: new Text("lng: ${data[index]["address"]["geo"]["lng"]}"),
+                  ),
                   
                 ],
               ),
